@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "POSCOMP.",
+  "width" : 600,
+  "height" : 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/folivetti/POSCOMP_DATA/refs/heads/main/poscomp_alunos.csv"
+  },
+  "transform": [
+    {"fold": ["Alunos Mestrado", "Alunos Doutorado"]},
+  ],
+  "mark": {"type": "line", "point": {"filled": false, "fill": "white"}},
+  "encoding": {
+    "x": {"field": "Ano"},
+    "y": {"field": "value", "type": "quantitative"},
+    "color": {"field": "key", "type": "nominal"}
+  }
+}
